@@ -1,36 +1,30 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Abrardev\LocalTemporaryUrl\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
+use Abrardev\LocalTemporaryUrl\LocalTemporaryUrlServiceProvider;
+use Illuminate\Support\Facades\Storage;
 use Orchestra\Testbench\TestCase as Orchestra;
-use VendorName\Skeleton\SkeletonServiceProvider;
 
 class TestCase extends Orchestra
 {
     protected function setUp(): void
     {
         parent::setUp();
-
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'VendorName\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
     }
 
     protected function getPackageProviders($app)
     {
+
         return [
-            SkeletonServiceProvider::class,
+            LocalTemporaryUrlServiceProvider::class,
         ];
     }
 
-    public function getEnvironmentSetUp($app)
+    protected function getEnvironmentSetUp($app)
     {
-        config()->set('database.default', 'testing');
+        Storage::fake('local2');
 
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_skeleton_table.php.stub';
-        $migration->up();
-        */
+        config()->set('local-temporary-url.disk', ['local', 'local2']);
     }
 }

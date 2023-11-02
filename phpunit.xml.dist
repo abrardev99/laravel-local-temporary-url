@@ -16,10 +16,14 @@
     backupStaticProperties="false"
 >
     <testsuites>
-        <testsuite name="VendorName Test Suite">
+        <testsuite name="Abrardev Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
+    <php>
+        <env name="APP_ENV" value="testing" />
+        <env name="APP_KEY" value="AckfSECXIvnK5r28GVIWUAxmbBSjTsmF"/>
+    </php>
     <coverage>
         <report>
             <html outputDirectory="build/coverage"/>
