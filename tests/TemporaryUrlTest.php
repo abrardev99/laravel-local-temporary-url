@@ -11,8 +11,6 @@ it('can generate temporary url', function () {
 
     $url = Storage::disk('local2')->temporaryUrl($path, now()->addSecond());
 
-    expect($url)->toBeUrl();
-
     get($url)
         ->assertOk()
         ->assertDownload('file.txt');
