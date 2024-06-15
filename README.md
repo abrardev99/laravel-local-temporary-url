@@ -37,6 +37,20 @@ You can use the same syntax used for S3 disk.
 Storage::disk('local')->temporaryUrl('file.txt', now()->addMinutes(5));
 ```
 
+### Pass Parameters 
+You can pass parameters to the temporaryUrl function for ef filename.  
+```php
+Storage::disk('local')->temporaryUrl('file.txt', now()->addMinutes(5), ['filename' => 'customname']);
+```
+
+Not just file name, you can pass other options as well (with respect to disk) 
+```php
+[
+  'ResponseContentType' => 'application/octet-stream',
+  'ResponseContentDisposition' => 'attachment; filename=file2.jpg',
+]
+```
+
 ## Testing
 
 ```bash
