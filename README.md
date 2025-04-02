@@ -1,3 +1,6 @@
+> [!CAUTION]
+> This package has abounded in favor of Laravel 11 official support for temporary urls https://laravel.com/docs/11.x/filesystem#temporary-urls. However, you can still use this package in Laravel 10 and below. 
+
 ![Logo](https://banners.beyondco.de/Laravel%20Local%20Disk%20Temporary%20URL%20.png?theme=light&packageManager=composer+require&packageName=abrardev%2Flaravel-local-temporary-url&pattern=floorTile&style=style_1&description=Quickly+add+support+for+temporary+url+for+local+filesystem+drivers&md=1&showWatermark=0&fontSize=100px&images=link)
 
 ## Installation
